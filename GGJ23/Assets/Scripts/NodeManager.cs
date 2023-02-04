@@ -9,8 +9,6 @@ public class NodeManager : MonoBehaviour
     private void Awake() => nodeManager = this;
 
     public int[] nodeLevels, nodeLevelCap;
-    public string[] nodeType;
-    public int[] sapCost;
 
     public bool[] isActive;
     public bool[] isReachable;
@@ -19,6 +17,10 @@ public class NodeManager : MonoBehaviour
     public GameObject plant;
 
     public Player player;
+
+    public int sapExpansionCost = 6;
+    public int sapUpgradeCost = 10;
+    public int sapLevelUpCost = 8;
 
     private void Start()
     {
@@ -30,17 +32,7 @@ public class NodeManager : MonoBehaviour
 
         nodeLevelCap = new int[TotalNodes];
         for(int i = 0; i < TotalNodes; i++){
-            nodeLevelCap[i] = 1;
-        }
-
-        sapCost = new int[TotalNodes];
-        for(int i = 0; i < TotalNodes; i++){
-            sapCost[i] = 1;
-        }
-
-        nodeType = new string[TotalNodes];
-        for(int i = 0; i < TotalNodes; i++){
-            nodeType[i] = "Node " + i;
+            nodeLevelCap[i] = 3;
         }
 
         isReachable = new bool[TotalNodes];
@@ -65,6 +57,7 @@ public class NodeManager : MonoBehaviour
     }
 
     public void updateAllNodes(){
+        player.ChangeValues();
         foreach(var Node in nodeList){
             Node.UpdateUI();
         }
