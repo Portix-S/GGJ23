@@ -74,7 +74,7 @@ public class NodeManager : MonoBehaviour
             }
         }
 
-        player.sap = sunGain*waterGain*mineralGain + sunGain*waterGain + sunGain*mineralGain + waterGain*mineralGain + waterGain+sunGain + mineralGain;
+        player.sap += sunGain*waterGain*mineralGain + sunGain*waterGain + sunGain*mineralGain + waterGain*mineralGain + waterGain + sunGain + mineralGain;
     }
 
     public void updateAllNodes(){
