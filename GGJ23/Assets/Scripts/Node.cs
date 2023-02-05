@@ -11,10 +11,18 @@ public class Node : MonoBehaviour
     public int id;
 
     // Node types:
-    // 0 -> core
-    // 1 -> root
-    // 2 -> trunk
+    public const int CORE = 0; // 0 -> core or empty
+    public const int ROOT = 1;// 1 -> root
+    public const int TRUNK = 2;// 2 -> trunk
     public int type;
+
+    // Resources:
+    public const int WATER = 1;     // 1 -> water
+    public const int MINERALS = 2;  // 0 -> sun
+    public const int SUN = 3;       // 2 -> minerals
+    
+    public int resource;
+    public int amountResource = 6;
 
     public Node[] childrenNodes;
 
@@ -64,6 +72,7 @@ public class Node : MonoBehaviour
                     transform.GetChild(1).GetChild(2).GetComponentInChildren<TextMeshProUGUI>().text = "Spike";
                     transform.GetChild(1).GetChild(3).GetComponentInChildren<TextMeshProUGUI>().text = "Bark";
                 }
+                else CloseNode(1);
             }
             else CloseNode(1);
         }
@@ -75,7 +84,7 @@ public class Node : MonoBehaviour
         if(nodeManager.sapUpgradeCost > nodeManager.player.sap) return;
 
         nodeManager.player.sap -= nodeManager.sapUpgradeCost;
-        for(int i = 0; i < 3; i++){
+        for(int i = 0; i < 6; i++){
             transform.GetChild(i+3).gameObject.SetActive(false);
         }
         transform.GetChild(SelectedUpgrade + 3).gameObject.SetActive(true);

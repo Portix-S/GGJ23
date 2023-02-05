@@ -22,11 +22,19 @@ public class NodeManager : MonoBehaviour
     public int sapUpgradeCost = 10;
     public int sapLevelUpCost = 8;
 
+    int waterGain;
+    int mineralGain;
+    int sunGain;
+
     private void Start()
     {
         foreach(var Node in plant.GetComponentsInChildren<Node>()) nodeList.Add(Node);
         int TotalNodes = nodeList.Count; // alterar quando tiver a quantidade de vértices certa
         for(int i = 0; i < nodeList.Count; i++) nodeList[i].id = i;
+
+        waterGain = 0;
+        mineralGain = 0;
+        sunGain = 0;
 
         nodeLevels = new int[TotalNodes];
 
@@ -54,6 +62,19 @@ public class NodeManager : MonoBehaviour
         }
 
         updateAllNodes();
+    }
+
+    // Call this at the begining of the upgrade phase
+    public void updateResources(){
+        foreach(var Node in nodeList){
+            if(isActive[Node.id]){
+                if(Node.resource == Node.WATER) waterGain += Node.amountResource;
+                else if(Node.resource == Node.MINERALS) mineralGain += Node.amountResource;
+                else if(Node.resource == Node.SUN) sunGain += Node.amountResource;
+            }
+        }
+
+        player.sap = sunGain*waterGain*mineralGain + sunGain*waterGain + sunGain*mineralGain + waterGain*mineralGain + waterGain+sunGain + mineralGain;
     }
 
     public void updateAllNodes(){

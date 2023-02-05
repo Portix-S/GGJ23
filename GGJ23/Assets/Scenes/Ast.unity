@@ -159,7 +159,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215688, g: 0.4745098, b: 0.23596352, a: 0}
+  m_BackGroundColor: {r: 0.22745098, g: 0.7058824, b: 0.7372549, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -360,6 +360,108 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d51f019ec1433c6e8145957ce4ab435, type: 3}
+--- !u!1 &157395439 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6566173877423002363, guid: 3d51f019ec1433c6e8145957ce4ab435, type: 3}
+  m_PrefabInstance: {fileID: 157395438}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &157395440 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6795484615881367541, guid: 3d51f019ec1433c6e8145957ce4ab435, type: 3}
+  m_PrefabInstance: {fileID: 157395438}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &157395441 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8332414169493198387, guid: 3d51f019ec1433c6e8145957ce4ab435, type: 3}
+  m_PrefabInstance: {fileID: 157395438}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &157395442 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6147928578885893987, guid: 3d51f019ec1433c6e8145957ce4ab435, type: 3}
+  m_PrefabInstance: {fileID: 157395438}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &157395443 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5229003533681136564, guid: 3d51f019ec1433c6e8145957ce4ab435, type: 3}
+  m_PrefabInstance: {fileID: 157395438}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &157395444 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6959748271957567253, guid: 3d51f019ec1433c6e8145957ce4ab435, type: 3}
+  m_PrefabInstance: {fileID: 157395438}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &157395445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 157395440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aad2de4c9cfd4cd98a056920bbfa21c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &157395446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 157395441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c370b5c86802e747ba0a96fe99b29ea5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &157395447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 157395442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e58a5becd71ff5ada5934b8f8c25140, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &157395448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 157395443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7739afda8a87368fbd6f96fc13475dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &157395449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 157395444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c09fb399a34db37c1a3b20e01bf56035, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &219420801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 157395439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2b57460a22f823ec95c8347e493a1f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &345546148
 GameObject:
   m_ObjectHideFlags: 0
@@ -674,10 +776,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48f99e4130474b24496e6fb385792949, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 0
+  absorption: 0
+  attack: 0
+  totalSpikes: 0
+  totalLeafs: 0
   sap: 10
-  sun: 1
-  water: 0
-  minerals: 0
+  storedSap: 0
   resourcesUI: {fileID: 345546151}
 --- !u!224 &801558723 stripped
 RectTransform:
