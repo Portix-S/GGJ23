@@ -9,8 +9,6 @@ public class NodeManager : MonoBehaviour
     private void Awake() => nodeManager = this;
 
     public int[] nodeLevels, nodeLevelCap;
-    public string[] nodeType;
-    public int[] sapCost;
 
     public bool[] isActive;
     public bool[] isReachable;
@@ -20,27 +18,29 @@ public class NodeManager : MonoBehaviour
 
     public Player player;
 
+    public int sapExpansionCost = 6;
+    public int sapUpgradeCost = 10;
+    public int sapLevelUpCost = 8;
+
+    int waterGain;
+    int mineralGain;
+    int sunGain;
+
     private void Start()
     {
         foreach(var Node in plant.GetComponentsInChildren<Node>()) nodeList.Add(Node);
         int TotalNodes = nodeList.Count; // alterar quando tiver a quantidade de vértices certa
         for(int i = 0; i < nodeList.Count; i++) nodeList[i].id = i;
 
+        waterGain = 0;
+        mineralGain = 0;
+        sunGain = 0;
+
         nodeLevels = new int[TotalNodes];
 
         nodeLevelCap = new int[TotalNodes];
         for(int i = 0; i < TotalNodes; i++){
-            nodeLevelCap[i] = 1;
-        }
-
-        sapCost = new int[TotalNodes];
-        for(int i = 0; i < TotalNodes; i++){
-            sapCost[i] = 1;
-        }
-
-        nodeType = new string[TotalNodes];
-        for(int i = 0; i < TotalNodes; i++){
-            nodeType[i] = "Node " + i;
+            nodeLevelCap[i] = 3;
         }
 
         isReachable = new bool[TotalNodes];
@@ -64,7 +64,21 @@ public class NodeManager : MonoBehaviour
         updateAllNodes();
     }
 
+    // Call this at the begining of the upgrade phase
+    public void updateResources(){
+        foreach(var Node in nodeList){
+            if(isActive[Node.id]){
+                if(Node.resource == Node.WATER) waterGain += Node.amountResource;
+                else if(Node.resource == Node.MINERALS) mineralGain += Node.amountResource;
+                else if(Node.resource == Node.SUN) sunGain += Node.amountResource;
+            }
+        }
+
+        player.sap = sunGain*waterGain*mineralGain + sunGain*waterGain + sunGain*mineralGain + waterGain*mineralGain + waterGain+sunGain + mineralGain;
+    }
+
     public void updateAllNodes(){
+        player.ChangeValues();
         foreach(var Node in nodeList){
             Node.UpdateUI();
         }
